@@ -18,14 +18,15 @@ export const Cards = ({ tiendas }) => {
                       {(tiendas[a].name)==='España' ? <img src={es} style={{maxWidth:"24%"}}/> : 
                         (tiendas[a].name)==='Francia' ? <img src={fr} style={{maxWidth:"24%"}}/> : 
                         (tiendas[a].name)==='Italia' ? <img src={it} style={{maxWidth:"24%"}}/> :
-                        (tiendas[a].name)==='Portugal' ? <img src={pt} style={{maxWidth:"24%"}}/> :
-                        <p></p>
+                        <img src={pt} style={{maxWidth:"24%"}}/> 
                       }
                         <h3>{tiendas[a].name} ({tiendas[a].cities[b].name})</h3>
                         <p key={a}>{tiendas[a].cities[b].shops[c].name}</p>
                         <p>{tiendas[a].cities[b].shops[c].zipcode}</p>
                         <p>Lat: {tiendas[a].cities[b].shops[c].center_point[0].substr(0, 6)}; 
                           Long: {tiendas[a].cities[b].shops[c].center_point[1].substr(0, 7)}</p>
+                        {/* <p>{tiendas[a].cities[b].shops[c].images_full_path[150]}</p> */}
+                        <img src={tiendas[a].cities[b].shops[c].images_full_path[150]} style={{maxWidth:"24%"}}/>
                   </div>
                 ))}
               </div>
